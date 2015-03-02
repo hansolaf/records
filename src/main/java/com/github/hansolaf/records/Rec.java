@@ -80,6 +80,15 @@ public class Rec<T> implements
     }
 
     /**
+     * Returns the value to which the specified key is mapped, or
+     * {@code defaultValue} if this map contains no mapping for the key
+     */
+    @SuppressWarnings("unchecked")
+    public <A> A getOrDefault(Key<A> key, A defaultValue) {
+        return (A) map.getOrDefault(key, defaultValue);
+    }
+
+    /**
      * Returns a stream of the map entries
      */
     public Stream<Entry<Key<?>, Object>> stream() {
